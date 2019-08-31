@@ -1,0 +1,56 @@
+{% extends 'post/base_post.html' %}
+
+{% block content %}
+
+    <div class="jumbotron jumbotron-fluid" style="position: relative;">
+        <div class="container">
+            <h1 class="display-4">프로그라피 게시판</h1>
+            <p class="lead">프로그라피 5기 장고 게시판입니다.</p>
+        </div>
+        <a href="{% url 'post:new' %}" style="position:absolute; right:20px; bottom:20px;"><i class="fas fa-plus"></i></a>
+
+    </div>
+
+    <div class="search_bar" style="text-align: right">
+        <form action="" method="get">
+            <input type="text" name="q" value="{{ q }}" style="height: 30px;"/>
+            <button type="submit" style="border:transparent; background-color: transparent;">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+    </div>
+
+    <br/>
+
+    {% if q %}
+        <div style="text-align:center;">'{{ q }}' 검색 결과입니다.<a href="{% url 'post:list' %}" style="color: #E40043;">전체 목록 보기</a>
+        </div>
+        <br/>
+    {% endif %}
+
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col" style="width:60%;">제목</th>
+      <th scope="col">작성일</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for posting in postings %}
+      <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+          <td><a href="{% url 'post:detail' posting.id %}" style="color: #E40043; font-weight: bold;">{{ posting.title }}</a></td>
+      <td>{{ posting.created_at }}</td>
+    </tr>
+        {% endfor %}
+  </tbody>
+</table>
+
+    <br/>
+    <br/>
+    <br/>
+
+
+{% endblock %}

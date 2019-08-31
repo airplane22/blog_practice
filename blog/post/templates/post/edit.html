@@ -1,0 +1,22 @@
+{% extends 'post/base_post.html' %}
+
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input required style="width:90%;" type="text" name="title" value="{{ posting.title }}">
+    <hr/>
+    <textarea required style="width:90%; height: 300px;" type="text" name="content">{{ posting.content }}</textarea>
+
+    <br/>
+
+    <button type="submit">제출</button>
+</form>
+
+<br/>
+    <br/>
+<br/>
+
+<a href="{% url 'post:list' %}"><i class="fas fa-home"></i></a>
+{% endblock %}
+

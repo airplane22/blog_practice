@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/397f20b135.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            color : black;
+        }
+
+        i {
+            color : #E40043;
+        }
+
+        * {
+            font-family: 'Nanum Gothic Coding', monospace;
+        }
+
+        h5 {
+            font-weight: normal;
+        }
+
+        h1 {
+            font-family: 'Black Han Sans', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+{#<div style="width:100%; height: 220px; overflow: hidden;">#}
+{#    <img src="http://prography.org/img/seo.png" alt="" style="margin-top:-150px; width:100%; height: 500px;">#}
+{#        </div>#}
+
+<br/>
+<div class="container">
+    <div class="row">
+    <div class="col-1" style="display: inline-block;"></div>
+    <div class="col-10" style="display: inline-block;"><a href="{% url 'post:list' %}"><h1 style="color: #E40043;">Prography 5th django</h1></a></div>
+    </div>
+</div>
+
+<br/>
+
+<div class="container">
+    <div class="row">
+        <div class="col-1" style="display: inline-block;"></div>
+        <div class="col-10" style="display: inline-block;">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div class="col-1" style="display: inline-block;"></div>
+    </div>
+</div>
+
+
+</body>
+</html>
